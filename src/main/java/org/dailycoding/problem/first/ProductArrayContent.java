@@ -11,13 +11,13 @@ public final class ProductArrayContent {
         return listOfProducts;
     }
 
-    public List<Integer> getLisWithOutIndex(List<Integer> listOfNumbers, int index) {
+    public List<Integer> getListWithOutIndex(List<Integer> listOfNumbers, int index) {
         listOfNumbers.remove(index);
         return new ArrayList(listOfNumbers);
     }
 
     public Integer getProductOfList(List<Integer> listOfNumbers) {
-        return 120;
+        return listOfNumbers.stream().reduce(1, (subtotal, number) -> subtotal * number);
     }
 
 

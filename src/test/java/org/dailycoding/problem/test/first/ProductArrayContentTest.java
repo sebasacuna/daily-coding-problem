@@ -32,7 +32,7 @@ public class ProductArrayContentTest {
 
     @Test
     public void getLisWithOutIndex_shouldReturnListWithOutIndexTwo() {
-        List<Integer> listOfNumbers = productArrayContent.getLisWithOutIndex(new ArrayList(Arrays.asList(
+        List<Integer> listOfNumbers = productArrayContent.getListWithOutIndex(new ArrayList(Arrays.asList(
                 1, 2, 3, 4, 5)) , 2);
 
         assertEquals(4, listOfNumbers.size(), 0.0);
@@ -40,7 +40,7 @@ public class ProductArrayContentTest {
 
     @Test
     public void getLisWithOutIndex_shouldReturnListWithOutIndexOne() {
-        List<Integer> listOfNumbers = productArrayContent.getLisWithOutIndex(new ArrayList(Arrays.asList(
+        List<Integer> listOfNumbers = productArrayContent.getListWithOutIndex(new ArrayList(Arrays.asList(
                 1, 2, 3, 4, 5)) , 1);
 
         assertEquals(4, listOfNumbers.size(), 0.0);
@@ -51,7 +51,7 @@ public class ProductArrayContentTest {
         List<Integer> testNumbers = new ArrayList(Arrays.asList(
                 1, 2, 3, 4, 5));
 
-        List<Integer> listOfNumbers = productArrayContent.getLisWithOutIndex(new ArrayList(testNumbers) , 0);
+        List<Integer> listOfNumbers = productArrayContent.getListWithOutIndex(new ArrayList(testNumbers) , 0);
         Integer numberToFind = testNumbers.get(0);
         Optional<Integer> numberToFilter = listOfNumbers.parallelStream().filter( number -> number.equals(numberToFind)).findFirst();
 
@@ -59,7 +59,7 @@ public class ProductArrayContentTest {
     }
 
     @Test
-    public void getProductOfList_shouldReturnAnSigleIntegerWithTheProductOfTheList() {
+    public void getProductOfList_shouldReturnAnSingleIntegerWithTheProductOfTheList() {
         List<Integer> testNumbers = new ArrayList(Arrays.asList(
                 1, 2, 3, 4, 5));
 
