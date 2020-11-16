@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,6 +56,16 @@ public class ProductArrayContentTest {
         Optional<Integer> numberToFilter = listOfNumbers.parallelStream().filter( number -> number.equals(numberToFind)).findFirst();
 
         assertEquals(numberToFilter.isPresent(), false);
+    }
+
+    @Test
+    public void getProductOfList_shouldReturnAnSigleIntegerWithTheProductOfTheList() {
+        List<Integer> testNumbers = new ArrayList(Arrays.asList(
+                1, 2, 3, 4, 5));
+
+        List<Integer> productOfList = productArrayContent.getProductOfList(new ArrayList(testNumbers));
+
+        assertEquals(productOfList, 120);
     }
 
 
