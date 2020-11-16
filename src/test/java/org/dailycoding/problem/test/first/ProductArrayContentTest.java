@@ -28,7 +28,7 @@ public class ProductArrayContentTest {
     }
 
     @Test
-    public void getLisWithOutIndex_shouldReturnStreamWithOutNumber() {
+    public void getLisWithOutIndex_shouldReturnListWithOutNumber() {
         List<Integer> listOfNumbers = productArrayContent.getLisWithOutIndex(Arrays.asList(
                 1, 2, 3, 4, 5) , 2);
         assertEquals(4, listOfNumbers.size(), 0.0);
