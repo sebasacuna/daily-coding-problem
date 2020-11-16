@@ -1,0 +1,40 @@
+apply plugin: 'jacoco'
+apply plugin: 'java'
+
+group 'org.dailycoding.problem'
+version '0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+    afterEvaluate {
+        classDirectories.from = files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    'com/practice/kata/Main.class',
+                    'com/practice/kata/Main.java'
+            ])
+        })
+    }
+
+}
+
+check.dependsOn jacocoTestReport
