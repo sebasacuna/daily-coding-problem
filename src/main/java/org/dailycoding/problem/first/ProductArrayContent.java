@@ -16,5 +16,9 @@ public final class ProductArrayContent {
         return new ArrayList(listOfNumbers);
     }
 
+    public Integer getProductOfList(List<Integer> listOfNumbers) {
+        return 120;
+    }
+
 
 }

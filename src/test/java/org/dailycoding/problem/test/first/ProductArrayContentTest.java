@@ -63,7 +63,7 @@ public class ProductArrayContentTest {
         List<Integer> testNumbers = new ArrayList(Arrays.asList(
                 1, 2, 3, 4, 5));
 
-        List<Integer> productOfList = productArrayContent.getProductOfList(new ArrayList(testNumbers));
+        Integer productOfList = productArrayContent.getProductOfList(new ArrayList(testNumbers));
 
         assertEquals(productOfList, 120);
     }
